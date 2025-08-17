@@ -1,0 +1,595 @@
+{
+	"info": {
+		"_postman_id": "9d8c40ec-3819-4b59-bae9-18455386c98b",
+		"name": "Article",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17285156"
+	},
+	"item": [
+		{
+			"name": "Article",
+			"item": [
+				{
+					"name": "publish Article",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTA2MGY4ZjJmNTRhOTViMWExMWQ1YiIsImlhdCI6MTc1NTM0MTM3Nn0.wi8iygMEw-G09EFMmxRwZFoqDcmm7u9gNIQOmW2Tp54",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTFkYmY4NzRkZTQzZDQ4NDJhZGU3NCIsImlhdCI6MTc1NTQzODA5NiwiZXhwIjoxNzU2MDQyODk2fQ.oCG94jIIpURKkN-biQw5ND8JXyaCCgbblXyF-edX9J0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"My New fourth Article\",\r\n  \"summary\": \"A Xl summary\",\r\n  \"body\": \"The full article body...\",\r\n  \"tags\": [\"68a1dd6ef5f703d7a357b24f\"],\r\n  \"publisher\": \"68a1dbf874de43d4842ade74\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/article/publish",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"article",
+								"publish"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Recent Articles of Followed Tags of User",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTFhODdhODE0MDViZjEyNzEyOTRhZCIsImlhdCI6MTc1NTQzODg4NiwiZXhwIjoxNzU2MDQzNjg2fQ.G93B8Ll71JgzbgLYrIuksQynAofoE18i9R4nlC2wSnM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"publisherId\" : \"68a1dbf874de43d4842ade74\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/article/getRecentArticles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"article",
+								"getRecentArticles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View Article",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTA2MGY4ZjJmNTRhOTViMWExMWQ1YiIsImlhdCI6MTc1NTM0MTM3Nn0.wi8iygMEw-G09EFMmxRwZFoqDcmm7u9gNIQOmW2Tp54",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OWY5NDJkYzhiZDBkNTkyOWU4NzY0MyIsImlhdCI6MTc1NTM0NzkzOH0.H1BtaNtefk3ExDj6YPkDnzCvR9fAoHhj52hqTC6Cnv4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"articleId\" : \"68a1de95f5f703d7a357b25a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/article/viewArticle",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"article",
+								"viewArticle"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tag",
+			"item": [
+				{
+					"name": "Create Tag",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Science\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/tag/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"tag",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Tags With Articles",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Science\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/tag",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"tag"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Follow Tag",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTFhODdhODE0MDViZjEyNzEyOTRhZCIsImlhdCI6MTc1NTQzODg4NiwiZXhwIjoxNzU2MDQzNjg2fQ.G93B8Ll71JgzbgLYrIuksQynAofoE18i9R4nlC2wSnM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"tagId\": \"68a1dd6ef5f703d7a357b24f\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/tag/follow",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"tag",
+								"follow"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unfollow Tag",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTFkYmY4NzRkZTQzZDQ4NDJhZGU3NCIsImlhdCI6MTc1NTQzODA5NiwiZXhwIjoxNzU2MDQyODk2fQ.oCG94jIIpURKkN-biQw5ND8JXyaCCgbblXyF-edX9J0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tagId\": \"68a1dd6ef5f703d7a357b24f\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/tag/unfollow",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"tag",
+								"unfollow"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Top Visited Tags",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTA2MGY4ZjJmNTRhOTViMWExMWQ1YiIsImlhdCI6MTc1NTM0MTkwM30.YBwBg61WGiH3xVbp4gtCI1SUwxNDBxReoB1iGHRvS_E",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/tag/getTopVisitedTags",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"tag",
+								"getTopVisitedTags"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"kiro\",\r\n    \"email\": \"kiro@example.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// {\r\n//   \"email\": \"arsanynashaat@yahoo.com\",\r\n//   \"password\": \"test1234\"\r\n// }\r\n\r\n// {\r\n//   \"email\": \"john@example.com\",\r\n//   \"password\": \"123456\"\r\n// }\r\n// {\r\n//   \"email\": \"steven@example.com\",\r\n//   \"password\": \"123456\"\r\n// }\r\n\r\n{\r\n    \"email\": \"Fady@example.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Publishers",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTA2MGY4ZjJmNTRhOTViMWExMWQ1YiIsImlhdCI6MTc1NTM0MTM3Nn0.wi8iygMEw-G09EFMmxRwZFoqDcmm7u9gNIQOmW2Tp54",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTFkYmY4NzRkZTQzZDQ4NDJhZGU3NCIsImlhdCI6MTc1NTQ0MTE0MywiZXhwIjoxNzU2MDQ1OTQzfQ.ZjZlOp0B7yR9Q_a7iw9uOwdTzsdk2qMQJL-dvWTjhZQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\" : \"68a1dbf874de43d4842ade74\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/auth/getAllPublishers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"getAllPublishers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Followed Tags By user",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTFhODdhODE0MDViZjEyNzEyOTRhZCIsImlhdCI6MTc1NTQzODg4NiwiZXhwIjoxNzU2MDQzNjg2fQ.G93B8Ll71JgzbgLYrIuksQynAofoE18i9R4nlC2wSnM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/tag/followed",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"tag",
+								"followed"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Follow Publisher",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTFhODdhODE0MDViZjEyNzEyOTRhZCIsImlhdCI6MTc1NTQzODg4NiwiZXhwIjoxNzU2MDQzNjg2fQ.G93B8Ll71JgzbgLYrIuksQynAofoE18i9R4nlC2wSnM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"publisherId\" : \"68a1dbf874de43d4842ade74\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/auth/follow",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"follow"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unfollow Publisher",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTFhODdhODE0MDViZjEyNzEyOTRhZCIsImlhdCI6MTc1NTQzODg4NiwiZXhwIjoxNzU2MDQzNjg2fQ.G93B8Ll71JgzbgLYrIuksQynAofoE18i9R4nlC2wSnM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"publisherId\" : \"68a1dbf874de43d4842ade74\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/auth/unfollow",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"unfollow"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "like Article",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTA2MGY4ZjJmNTRhOTViMWExMWQ1YiIsImlhdCI6MTc1NTM0MTM3Nn0.wi8iygMEw-G09EFMmxRwZFoqDcmm7u9gNIQOmW2Tp54",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YTFhODdhODE0MDViZjEyNzEyOTRhZCIsImlhdCI6MTc1NTQzODg4NiwiZXhwIjoxNzU2MDQzNjg2fQ.G93B8Ll71JgzbgLYrIuksQynAofoE18i9R4nlC2wSnM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"articleId\" : \"68a1de95f5f703d7a357b25a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/article/likeArticle",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"article",
+								"likeArticle"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
